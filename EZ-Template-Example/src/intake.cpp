@@ -2,10 +2,10 @@
 
 int8_t port = 8;
 
-pros::Motor intake(port, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor intake(port);
 
 void intakeSpin(int speed){
-    intake.move(127); // intake = 127
+    intake.move(speed); // intake = 127
 }
 
 void intakeControl()
