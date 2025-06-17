@@ -138,8 +138,7 @@ bin/main.cpp.o: src/main.cpp include/main.h include/api.h \
  include/EZ-Template/tracking_wheel.hpp include/pros/adi.hpp \
  include/pros/rotation.hpp include/pros/motor_group.hpp \
  include/EZ-Template/piston.hpp include/EZ-Template/sdcard.hpp \
- include/autons.hpp include/subsystems.hpp include/intake.hpp \
- include/main.h
+ include/autons.hpp include/subsystems.hpp include/intake.hpp
 include/main.h:
 include/api.h:
 include/pros/adi.h:
@@ -375,4 +374,3 @@ include/EZ-Template/sdcard.hpp:
 include/autons.hpp:
 include/subsystems.hpp:
 include/intake.hpp:
-include/main.h:

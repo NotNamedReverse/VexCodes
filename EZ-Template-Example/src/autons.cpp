@@ -379,11 +379,24 @@ void measure_offsets() {
 // . . .
 
 void practice(){
-  intakeSpin(127);
 
   chassis.pid_drive_set(24_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
-  chassis.pid_turn_set(45_deg, TURN_SPEED);
+  chassis.pid_turn_set(90_deg, TURN_SPEED);
   chassis.pid_wait();
+
+  
+  chassis.pid_drive_set(24_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+
+
+   chassis.pid_turn_set(180_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  
+
+  
+  
+
 }

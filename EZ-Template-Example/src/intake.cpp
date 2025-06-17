@@ -1,25 +1,8 @@
 #include "main.h"
+#define INTAKE_PORT 4
 
-int8_t port = 8;
-
-pros::Motor intake(port);
+pros::Motor intake(INTAKE_PORT);
 
 void intakeSpin(int speed){
     intake.move(speed); // intake = 127
-}
-
-void intakeControl()
-{
-    if (master.get_digital(DIGITAL_R1))
-    {
-        intake.move(127); // intake = 127
-    }
-    else if (master.get_digital(DIGITAL_R2))
-    {
-        intake.move(-127); // intake = -127
-    }
-    else
-    {
-        intake.move(0); // intake = 0
-    }
 }
