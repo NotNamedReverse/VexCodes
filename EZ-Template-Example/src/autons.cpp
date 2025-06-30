@@ -53,18 +53,43 @@ void default_constants() {
 // Drive Example
 ///
 void drive_example() {
-  // The first parameter is target inches
-  // The second parameter is max speed the robot will drive at
-  // The third parameter is a boolean (true or false) for enabling/disabling a slew at the start of drive motions
-  // for slew, only enable it when the drive distance is greater than the slew distance + a few inches
+  setClamp(true);
 
-  chassis.pid_drive_set(24_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(-48_in, 55, true);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-12_in, DRIVE_SPEED);
+  setClamp(false);
+
+  pros::delay(50);
+
+  chassis.pid_turn_set(35_deg, TURN_SPEED, true);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-12_in, DRIVE_SPEED);
+  intakeSpin(100);
+
+  chassis.pid_drive_set(10_in, 55, true);
+  chassis.pid_wait();
+
+  pros::delay(1000);
+
+  chassis.pid_turn_set(180_deg, TURN_SPEED, true);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(30_in, 55, true);
+  chassis.pid_wait();
+
+  chassis.pid_turn_set(150_deg, TURN_SPEED, true);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(12_in, 55, true);
+  chassis.pid_wait();
+
+  pros::delay(500);
+
+  chassis.pid_turn_set(-125_deg, TURN_SPEED, true);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(20_in, 55, true);
   chassis.pid_wait();
 }
 

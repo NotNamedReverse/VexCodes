@@ -1,4 +1,4 @@
-bin/autons.cpp.o: src/autons.cpp include/main.h include/api.h \
+bin/pistons.cpp.o: src/pistons.cpp include/main.h include/api.h \
  include/pros/adi.h include/pros/colors.h include/pros/device.h \
  include/pros/distance.h include/pros/error.h include/pros/ext_adi.h \
  include/pros/adi.h include/pros/adi.h include/pros/gps.h \

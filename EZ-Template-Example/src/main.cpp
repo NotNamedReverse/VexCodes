@@ -9,11 +9,11 @@
 // Chassis constructor
 ez::Drive chassis(
     // These are your drive motors, the first motor is used for sensing!
-    {2, 6, -18},     // Left Chassis Ports (negative port will reverse it!)
-    {-7, -9, 10},  // Right Chassis Ports (negative port will reverse it!)
+    {3, -2, -11},     // Left Chassis Ports (negative port will reverse it!)
+    {-10, 9, 19},  // Right Chassis Ports (negative port will reverse it!)
 
-    13,      // IMU Port
-    2.75,  // Wheel Diameter (Remember, 4" wheels without screw holes are actually 4.125!)
+    18,      // IMU Port
+    3.25,  // Wheel Diameter (Remember, 4" wheels without screw holes are actually 4.125!)
     450);   // Wheel RPM = cartridge * (motor gear / wheel gear)
 
 // Uncomment the trackers you're using here!
@@ -61,7 +61,7 @@ void initialize() {
   // Autonomous Selector using LLEMU
   ez::as::auton_selector.autons_add({
       {"Drive\n\nDrive forward and come back", drive_example},
-      {"Turn\n\nTurn 3 times.", turn_example},
+      {"Turn\n\nTurn 3 times.", drive_example},
       {"Drive and Turn\n\nDrive forward, turn, come back", drive_and_turn},
       {"Drive and Turn\n\nSlow down during drive", wait_until_change_speed},
       {"Swing Turn\n\nSwing in an 'S' curve", swing_example},
@@ -250,10 +250,9 @@ void opcontrol() {
     // Gives you some extras to make EZ-Template ezier
     ez_template_extras();
 
-    intakeControl(); // Intake control
-
     
     chassis.opcontrol_tank();  // Tank control
+    intakeControl();
 
 
     // chassis.opcontrol_arcade_standard(ez::SPLIT);   // Standard split arcade

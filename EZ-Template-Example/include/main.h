@@ -47,6 +47,7 @@
 #include "autons.hpp"
 #include "subsystems.hpp"
 #include "intake.hpp"
+#include "pistons.hpp"
 
 
 /**
